@@ -11,15 +11,15 @@ error_reporting(E_ALL);
 // Load you classes
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
-require_once 'classes/CardRepository.php';
+require_once 'classes/BlogRepository.php';
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-// This example is about a Pokémon card collection
+// This example is about a Pokémon blog collection
 // Update the naming if you'd like to work with another collection
-$cardRepository = new CardRepository($databaseManager);
-$blogs = $cardRepository->get();
+$blogRepository = new BlogRepository($databaseManager);
+$blogs = $blogRepository->get();
 
 // Get the current action to execute
 // If nothing is specified, it will remain empty (home should be loaded)
